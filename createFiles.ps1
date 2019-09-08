@@ -16,7 +16,7 @@ documentation, even if Microsoft has been advised of the possibility of such dam
   Particularly helpful in testing scenarios, this script will build out a number of files for interacting with Azure Storage. 
 
 .PARAMETER 
-  Required: file number, file size, and file path.
+  Required: file number, file size, file path, and files
 
 .INPUTS
   File size should be in bytes. As a frame of reference, here are a few different sizes to possibly use in the script:
@@ -35,15 +35,16 @@ documentation, even if Microsoft has been advised of the possibility of such dam
   
 .EXAMPLE
   CreateFiles -fileNumber 3 -fileSize 1024 -filePath "\\server\share\folder\"
+  Make sure you use a \ at the end of your local or remote file path.
 #>
 
 Function CreateFiles {
 
     param(
         [Parameter(Mandatory=$true)]
-        [string]$fileNumber,
+        [int]$fileNumber,
         [Parameter(Mandatory=$true)]
-        [array]$fileSize,
+        [int]$fileSize,
         [Parameter(Mandatory=$true)]
         [string]$filePath
     )
@@ -55,6 +56,6 @@ for($i=0; $i -lt $fileNumber; $i++)
     {
         $out = New-Object byte[] $fileSize; 
         (New-Object Random).NextBytes($out); 
-        [IO.File]::WriteAllBytes($directory+"$([guid]::NewGuid().ToString()).txt", $out)
+        [IO.File]::WriteAllBytes($filePath+"$([guid]::NewGuid().ToString()).txt", $out)
     }
 }
