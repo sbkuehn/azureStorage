@@ -34,9 +34,9 @@ documentation, even if Microsoft has been advised of the possibility of such dam
 
 param(
     [Parameter(Mandatory=$true)]
-    [int]$storageAccountName,
+    [string]$storageAccountName,
     [Parameter(Mandatory=$true)]
-    [int]$storageContainer,
+    [string]$storageContainer,
     [Parameter(Mandatory=$true)]
     [string]$sasKey,
     [Parameter(Mandatory=$true)]
