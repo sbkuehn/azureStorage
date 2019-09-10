@@ -45,7 +45,7 @@ param(
     [string]$filePath
 )
 
-$files = Get-ChildItem -Path "\\server\share\folder" -Recurse -Force
+$files = Get-ChildItem -Path "\\server\share\folder\" -Recurse -Force
 $headers = @{}
 $headers.Add("x-ms-blob-type","BlockBlob")
 
