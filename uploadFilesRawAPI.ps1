@@ -10,10 +10,12 @@ business information, or other pecuniary loss) arising out of the use of or inab
 documentation, even if Microsoft has been advised of the possibility of such damages.
 
 .SYNOPSIS
-  Stores a number of variables, grabs all files sitting in a local or remote file share, and uploads the files to an Azure Storage Account.
+  Stores a number of variables, grabs all files sitting in a local or remote file share, and uploads the files to an Azure Storage 
+  Account.
 
 .DESCRIPTION
-  This script will upload files to Azure Storage with a PutBlob call, using a shared access signature key. 
+  This script will upload files to Azure Storage with a PutBlob call, using a shared access signature (SAS) key. Generating the header
+  is difficult, so using a SAS key will be easier.
 
 .PARAMETER 
   Required: storage account name, storage account container, shared access signature key, file path, and files
