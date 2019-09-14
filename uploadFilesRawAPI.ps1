@@ -33,7 +33,7 @@ documentation, even if Microsoft has been advised of the possibility of such dam
   Purpose/Change: Initial script development
 #>
 
-
+[CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)]
     [string]$storageAccountName,
